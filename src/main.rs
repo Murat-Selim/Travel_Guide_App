@@ -1,5 +1,23 @@
+use std::io;
+
 fn main() {
-    let travel = create_travel(1, "Turkey".to_string(), "Istanbul".to_string(), "Travel".to_string(), "Travel is Turkey".to_string());
+    let mut id = String::new();
+    io::stdin().read_line(&mut id).expect("failed to read");
+    let id: u32 = id.trim().parse().expect("failed to convert");
+
+    let mut country = String::new();
+    io::stdin().read_line(&mut country).expect("failed to read");
+
+    let mut city = String::new();
+    io::stdin().read_line(&mut city).expect("failed to read");
+
+    let mut title = String::new();
+    io::stdin().read_line(&mut title).expect("failed to read");
+
+    let mut desc = String::new();
+    io::stdin().read_line(&mut desc).expect("failed to read");
+
+    let travel = create_travel(id, country, city, title, desc);
         
     println!("Created Travel is {:?}", travel);
 
